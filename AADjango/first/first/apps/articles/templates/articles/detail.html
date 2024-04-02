@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.article_tittle }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ article.article_tittle }}</h2>
+<p>{{ article.article_description }}</p>
+<em>{{ article.article_date }}</em>
+
+<a href="{% url 'articles:edit_article' article.id %}">Редактировать</a>
+<a href="{% url 'articles:delete_article' article.id %}">Удалить</a>
+
+{% endblock %}

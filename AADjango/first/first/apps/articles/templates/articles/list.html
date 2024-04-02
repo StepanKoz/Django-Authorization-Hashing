@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Статьи блога{% endblock %}
+
+{% block content %}
+    
+    {% if articles_list %}
+
+        {% for a in articles_list %}
+            <a href="{% url 'articles:detail' a.id %}">{{ a.article_tittle }}</a>
+        {% endfor %}    
+
+    {% else %}
+        Блог пустой 
+    {% endif %}
+
+
+    <a href="{% url 'articles:create_article' %}">Создать новую статью</a>
+{% endblock %}
